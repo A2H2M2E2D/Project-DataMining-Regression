@@ -70,7 +70,7 @@ print('After scaling (x) by MinMaxScaler: = \n' , x)
 print('------------------------------------------------------------------------')
 
 #visual scalining
-# dataset.hist(figsize=(20,20))
+dataset.hist(figsize=(20,20))
 
 #Spliting dataset into (Training set & Test set)
 from sklearn.model_selection import train_test_split
@@ -83,14 +83,13 @@ regressor.fit(x_train,y_train)
 
 #Predicting new results
 y_pred = regressor.predict(x_test)
-# plt.figure(figsize=(10, 8))
 
 #Evaluate your model : R square and MAE / RMSE
 from sklearn.metrics import mean_absolute_error ,mean_squared_error , r2_score
 mea = mean_absolute_error(y_test , y_pred)
 print(f'Mean Absolute error=   {mea:4f}\n')
-# mse = mean_squared_error(y_test , y_pred)
-# print(f'Mean Squared =   {mse:4f}\n')
+mse = mean_squared_error(y_test , y_pred)
+print(f'Mean Squared =   {mse:4f}\n')
 r2 = r2_score(y_test , y_pred)
 print(f'R2 Score =   {r2:4f}\n')
 print('------------------------------------------------------------------------')
@@ -102,14 +101,13 @@ srv.fit(x_train,y_train)
 
 #Predicting new results
 y_pred = srv.predict(x_test)
-plt.figure(figsize=(10, 8))
 
 #Evaluate your model : R square and MAE / RMSE
 from sklearn.metrics import mean_absolute_error ,mean_squared_error , r2_score
 mea = mean_absolute_error(y_test , y_pred)
 print(f'Mean Absolute error=   {mea:4f}\n')
-# mse = mean_squared_error(y_test , y_pred)
-# print(f'Mean Squared =   {mse:4f}\n')
+mse = mean_squared_error(y_test , y_pred)
+print(f'Mean Squared =   {mse:4f}\n')
 r2 = r2_score(y_test , y_pred)
 print(f'R2 Score =   {r2:4f}\n')
 print('------------------------------------------------------------------------')
